@@ -7,31 +7,25 @@ import UnderConstruction from '../components/UnderConstruction.astro';
   <div class="heading">
     <h1><b>JDN</b></h1>
   </div>
-  <hr />
+  <hr class="rule" />
   <div class="introduction">
-    <table>
-      <tr>
-        <td>
-          <img class="portrait" src="./Portrait.jpeg" alt="Portrait of Jayden Chan" />
-        </td>
-        <td class="intro-text">
-          <p>
-            I've never seen much point describing someone by a single title. What good does it do to tell me that, say, <a href="https://en.wikipedia.org/wiki/Jim_Thorpe">:Jim Thorpe</a> was an American athlete? I would find it more interesting if one told me he was also a background actor, construction worker, a doorman, a security guard, a ditchdigger; briefly sailed for the <a href="https://en.wikipedia.org/wiki/United_States_Merchant_Marine">:United States Merchant Marine</a>; had Native American heritage and experience racism for that reason. <a href="https://en.wikipedia.org/wiki/Jim_Thorpe#Later_life,_film_career,_and_death">:(Yes, all this is true!)</a>
-          </p>
-          <p>
-            Indeed, I think everyone should be described beyond a couple of sentences. This reason is why I struggle to call myself just a <i>musician</i>, or an <i>IBDP student</i>. It would be a shame to try so many new things and <a class="pill" href="./experience.html" style="background-color: #2DB23A;">experiences</a> and not let it change who I am in any way. People aren't meant to be introduced like that.
-          </p>
-          <p>
-            If I could, I would rather call myself a 16 year old human being who studies the IBDP, performs and writes <a class="pill" href="./music.html" style="background-color: #7A4FBF;">music</a> as a side hustle, who also practices first aid and scouting, and also teaches coding to primary school students, and also wrote a children's book and dressed up as Father Christmas that one time.
-          </p>
-          <p>
-            This website is me doing that, in internet form. Please enjoy this amalgamation of <a class="pill" href="./gallery.html" style="background-color: #1C99CE;">projects</a> old and new that I think are cool enough to share with the world wide web.
-          </p>
-        </td>
-      </tr>
-    </table>
+    <img class="portrait" src="./portrait.webp" alt="Portrait of Jayden Chan" width="900" height="1371" />
+    <div class="intro-text">
+      <p>
+        I've never seen much point describing someone by a single title. What good does it do to tell me that, say, <a href="https://en.wikipedia.org/wiki/Jim_Thorpe">:Jim Thorpe</a> was an American athlete? I would find it more interesting if one told me he was also a background actor, construction worker, a doorman, a security guard, a ditchdigger; briefly sailed for the <a href="https://en.wikipedia.org/wiki/United_States_Merchant_Marine">:United States Merchant Marine</a>; had Native American heritage and experience racism for that reason. <a href="https://en.wikipedia.org/wiki/Jim_Thorpe#Later_life,_film_career,_and_death">:(Yes, all this is true!)</a>
+      </p>
+      <p>
+        Indeed, I think everyone should be described beyond a couple of sentences. This reason is why I struggle to call myself just a <i>musician</i>, or an <i>IBDP student</i>. It would be a shame to try so many new things and <a class="pill" href="./experience.html" style="background-color: #2DB23A;">experiences</a> and not let it change who I am in any way. People aren't meant to be introduced like that.
+      </p>
+      <p>
+        If I could, I would rather call myself a 16 year old human being who studies the IBDP, performs and writes <a class="pill" href="./music.html" style="background-color: #7A4FBF;">music</a> as a side hustle, who also practices first aid and scouting, and also teaches coding to primary school students, and also wrote a children's book and dressed up as Father Christmas that one time.
+      </p>
+      <p>
+        This website is me doing that, in internet form. Please enjoy this amalgamation of <a class="pill" href="./gallery.html" style="background-color: #1C99CE;">projects</a> old and new that I think are cool enough to share with the world wide web.
+      </p>
+    </div>
   </div>
-  <hr />
+  <hr class="rule rule-floor" />
   <div class="stuffIdo">
     <h2 class="heading"><b>Stuff I Do</b></h2>
     <UnderConstruction caption="Stuff is being done. Mostly this sign." />
@@ -57,30 +51,13 @@ import UnderConstruction from '../components/UnderConstruction.astro';
 
 <style is:global>
   body {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    background-color: #5B618A;
     min-height: 100vh;
   }
 
-  /* Nutshell bubbles copy the colour behind them, but the home page's gradient
-     is a background image, so they'd fall back to white (and the white text
-     would vanish). Make them dark instead, like the warning popup. */
-  .nutshell-bubble {
-    background: #111 !important;
-    color: white;
-  }
-  .nutshell-bubble-arrow {
-    --arrow-background: #111 !important;
-  }
+  /* Links inside Nutshell's expanded explanations. */
   .nutshell-bubble a {
-    color: white;
-  }
-
-  @keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    color: #F9CB40;
   }
 </style>
 
@@ -89,29 +66,64 @@ import UnderConstruction from '../components/UnderConstruction.astro';
     text-align: center;
     font-size: 50px;
     font-family: 'Bebas Neue', cursive;
-  }
-
-  div {
     margin: 5px;
-    padding: 0px;
+  }
+  .heading h1 {
+    color: #F9CB40;
+    margin: 0.3em 0 0.2em;
   }
 
+  .rule {
+    border: none;
+    height: 2px;
+    background: #F9CB40;
+    margin: 8px 0;
+  }
+
+  /* Portrait and text side by side. The portrait sits on the yellow line
+     below it, so the cut-off at the bottom of the photo looks deliberate. */
+  .introduction {
+    display: flex;
+    align-items: flex-end;
+    gap: 40px;
+    margin: 0;
+    padding: 0 16px;
+  }
+  .rule-floor {
+    margin-top: 0;
+  }
   .portrait {
-    width: 600px;
-    max-width: 40vw;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
     display: block;
+    width: 440px;
+    max-width: 38vw;
+    height: auto;
+    flex-shrink: 0;
   }
-
   .intro-text {
+    align-self: center;
+    max-width: 720px;
     font-size: 15px;
     line-height: 1.6;
+    padding: 24px 0;
   }
 
-  /* The coloured inline links to the other pages. They used to be <button>s
-     with onclick handlers; real links look the same and work without JavaScript. */
+  /* Phones: text first, then the portrait standing on the line. */
+  @media (max-width: 760px) {
+    .introduction {
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 8px;
+    }
+    .portrait {
+      width: min(360px, 80vw);
+      max-width: none;
+    }
+    .intro-text {
+      align-self: stretch;
+    }
+  }
+
+  /* The coloured inline links to the other pages. */
   .pill {
     padding: 1px 4px;
     margin: 0;
@@ -121,12 +133,16 @@ import UnderConstruction from '../components/UnderConstruction.astro';
     text-decoration: none;
   }
 
+  .stuffIdo {
+    margin: 5px;
+  }
+
   .goodbye {
     text-align: center;
     margin: 32px 0 64px;
   }
   .original-btn {
-    background-color: white;
+    background-color: #F9CB40;
     color: #111;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
@@ -142,7 +158,7 @@ import UnderConstruction from '../components/UnderConstruction.astro';
   .warning {
     max-width: 460px;
     width: calc(100% - 32px);
-    border: 4px solid #FFC83D;
+    border: 4px solid #F9CB40;
     background: #111;
     color: white;
     padding: 24px;
@@ -173,7 +189,7 @@ import UnderConstruction from '../components/UnderConstruction.astro';
     border: 2px solid white;
   }
   .ready-btn {
-    background: #FFC83D;
+    background: #F9CB40;
     color: #111;
   }
 </style>
