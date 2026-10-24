@@ -1,0 +1,36 @@
+---
+// The shell every page sits in: <head>, fonts, and the shared base styles.
+// Pages can pass a background colour; the home page sets its animated
+// gradient in its own <style is:global> block instead.
+interface Props {
+  title: string;
+  background?: string;
+}
+
+const { title, background } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200;400;600&display=swap"
+    />
+  </head>
+  <body style={background ? `background-color: ${background};` : undefined}>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+  }
+</style>

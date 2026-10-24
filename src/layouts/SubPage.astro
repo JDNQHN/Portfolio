@@ -1,0 +1,38 @@
+---
+// Layout for every page except the home page: a "JDN" link back home in the
+// top-left corner, a big centred heading, then whatever the page adds.
+import Base from './Base.astro';
+import HomeLink from '../components/HomeLink.astro';
+
+interface Props {
+  title: string;
+  heading: string;
+  background: string;
+}
+
+const { title, heading, background } = Astro.props;
+---
+
+<Base title={title} background={background}>
+  <HomeLink />
+  <h1 class="heading">{heading}</h1>
+  <slot />
+</Base>
+
+<style is:global>
+  body {
+    margin: 0;
+    padding: 0 16px;
+  }
+</style>
+
+<style>
+  .heading {
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: normal;
+    margin: 0;
+    padding-top: 64px;
+  }
+</style>

@@ -1,0 +1,30 @@
+---
+// The "UNDER CONSTRUCTION" sign, with a caption that changes per page.
+interface Props {
+  caption: string;
+}
+
+const { caption } = Astro.props;
+---
+
+<div class="construction">
+  <img src="./construction.svg" alt="Under construction" />
+  <p>{caption}</p>
+</div>
+
+<style>
+  .construction {
+    text-align: center;
+    margin: 24px auto 48px;
+    max-width: 900px;
+  }
+  .construction img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .construction p {
+    font-size: 16px;
+    margin: 12px 0 0;
+  }
+</style>
