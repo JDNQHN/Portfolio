@@ -4,10 +4,9 @@ import UnderConstruction from '../components/UnderConstruction.astro';
 ---
 
 <Base title="JDN">
-  <div class="heading">
-    <h1><b>JDN</b></h1>
-  </div>
-  <hr class="rule" />
+  <header class="masthead">
+    <h1>JDN ZHN TAO</h1>
+  </header>
   <div class="introduction">
     <img class="portrait" src="./portrait.webp" alt="Portrait of Jayden Chan" width="900" height="1371" />
     <div class="intro-text">
@@ -68,9 +67,22 @@ import UnderConstruction from '../components/UnderConstruction.astro';
     font-family: 'Bebas Neue', cursive;
     margin: 5px;
   }
-  .heading h1 {
-    color: #F9CB40;
-    margin: 0.3em 0 0.2em;
+  /* The big name banner: blue on yellow, edge to edge. The negative margin
+     cancels the browser's default 8px body margin so the band touches both sides. */
+  .masthead {
+    background: #F9CB40;
+    color: #5B618A;
+    margin: -8px -8px 32px;
+    padding: 28px 16px 20px;
+    text-align: center;
+  }
+  .masthead h1 {
+    margin: 0;
+    font-family: 'Bebas Neue', 'Arial Narrow', sans-serif;
+    font-weight: normal;
+    font-size: clamp(56px, 13vw, 168px);
+    line-height: 0.9;
+    letter-spacing: 0.04em;
   }
 
   .rule {
@@ -120,6 +132,10 @@ import UnderConstruction from '../components/UnderConstruction.astro';
     }
     .intro-text {
       align-self: stretch;
+      padding-top: 0;
+    }
+    .masthead {
+      margin-bottom: 16px;
     }
   }
 
