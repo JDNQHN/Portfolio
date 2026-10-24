@@ -73,7 +73,7 @@ import UnderConstruction from '../components/UnderConstruction.astro';
      cancels the browser's default 8px body margin so the band touches both sides. */
   .masthead {
     background: #F9CB40;
-    color: #5B618A;
+    color: #111;
     margin: -8px -8px 32px;
     padding: 28px 16px 20px;
     text-align: center;
@@ -137,12 +137,17 @@ import UnderConstruction from '../components/UnderConstruction.astro';
       transform: translateY(0);
     }
   }
+  /* A darker panel for the intro to sit on, with a yellow offset shadow
+     in the same spirit as the archive's TAKE ME BACK! button. */
   .intro-text {
     align-self: center;
     max-width: 720px;
     font-size: 15px;
     line-height: 1.6;
-    padding: 24px 0;
+    margin: 24px 6px 32px 0;
+    padding: 12px 28px;
+    background: #34385A;
+    box-shadow: 6px 6px 0 #F9CB40;
   }
 
   /* Phones: text first, then the portrait standing on the line. */
@@ -158,7 +163,8 @@ import UnderConstruction from '../components/UnderConstruction.astro';
     }
     .intro-text {
       align-self: stretch;
-      padding-top: 0;
+      margin: 0 6px 24px 0;
+      padding: 8px 20px;
     }
     .masthead {
       margin-bottom: 16px;
