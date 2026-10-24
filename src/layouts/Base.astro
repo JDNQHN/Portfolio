@@ -22,6 +22,12 @@ const { title, background } = Astro.props;
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200;400;600&display=swap"
     />
+    <!-- Nutshell v1.0.8 by Nicky Case (public domain, https://ncase.me/nutshell/).
+         Any link whose text starts with ":" becomes an expandable explanation. -->
+    <script is:inline src="./nutshell.js"></script>
+    <script is:inline>
+      Nutshell.setOptions({ dontEmbedHeadings: true });
+    </script>
   </head>
   <body style={background ? `background-color: ${background};` : undefined}>
     <slot />

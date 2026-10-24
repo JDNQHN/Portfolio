@@ -16,7 +16,7 @@ import UnderConstruction from '../components/UnderConstruction.astro';
         </td>
         <td class="intro-text">
           <p>
-            I've never seen much point describing someone by a single title. What good does it do to tell me that, say, <a class="ext" href="https://en.wikipedia.org/wiki/Jim_Thorpe" target="_blank" rel="noopener">Jim Thorpe</a> was an American athlete? I would find it more interesting if one told me he was also a background actor, construction worker, a doorman, a security guard, a ditchdigger; briefly sailed for the <a class="ext" href="https://en.wikipedia.org/wiki/United_States_Merchant_Marine" target="_blank" rel="noopener">United States Merchant Marine</a>; had Native American heritage and experience racism for that reason. <a class="ext" href="https://en.wikipedia.org/wiki/Jim_Thorpe#Later_life,_film_career,_and_death" target="_blank" rel="noopener">(Yes, all this is true!)</a>
+            I've never seen much point describing someone by a single title. What good does it do to tell me that, say, <a href="https://en.wikipedia.org/wiki/Jim_Thorpe">:Jim Thorpe</a> was an American athlete? I would find it more interesting if one told me he was also a background actor, construction worker, a doorman, a security guard, a ditchdigger; briefly sailed for the <a href="https://en.wikipedia.org/wiki/United_States_Merchant_Marine">:United States Merchant Marine</a>; had Native American heritage and experience racism for that reason. <a href="https://en.wikipedia.org/wiki/Jim_Thorpe#Later_life,_film_career,_and_death">:(Yes, all this is true!)</a>
           </p>
           <p>
             Indeed, I think everyone should be described beyond a couple of sentences. This reason is why I struggle to call myself just a <i>musician</i>, or an <i>IBDP student</i>. It would be a shame to try so many new things and <a class="pill" href="./experience.html" style="background-color: #2DB23A;">experiences</a> and not let it change who I am in any way. People aren't meant to be introduced like that.
@@ -63,6 +63,20 @@ import UnderConstruction from '../components/UnderConstruction.astro';
     min-height: 100vh;
   }
 
+  /* Nutshell bubbles copy the colour behind them, but the home page's gradient
+     is a background image, so they'd fall back to white (and the white text
+     would vanish). Make them dark instead, like the warning popup. */
+  .nutshell-bubble {
+    background: #111 !important;
+    color: white;
+  }
+  .nutshell-bubble-arrow {
+    --arrow-background: #111 !important;
+  }
+  .nutshell-bubble a {
+    color: white;
+  }
+
   @keyframes gradient {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -94,16 +108,6 @@ import UnderConstruction from '../components/UnderConstruction.astro';
   .intro-text {
     font-size: 15px;
     line-height: 1.6;
-  }
-
-  /* Links to other websites: plain underlined text. */
-  .ext {
-    color: white;
-    text-decoration: underline;
-    text-underline-offset: 2px;
-  }
-  .ext:hover {
-    opacity: 0.8;
   }
 
   /* The coloured inline links to the other pages. They used to be <button>s
