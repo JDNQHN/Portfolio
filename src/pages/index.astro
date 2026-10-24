@@ -14,15 +14,19 @@ import UnderConstruction from '../components/UnderConstruction.astro';
         <td>
           <img class="portrait" src="./Portrait.jpeg" alt="Portrait of Jayden Chan" />
         </td>
-        <td>
-          <p style="font-size: 15px;">
-            Hello, fellow website visiter. My name is <b>Jayden Chan</b> and I have several years of<a class="pill" href="./experience.html" style="background-color: #2DB23A;">experience</a>in coding. Unluckily for me, that barely takes me anywhere but hey, I try my best. My specialty is Html, CSS, and Javascript, which makes me great for website programming.<br /><br />
-
-            Oh yeah, and just a heads up, all of my works will be pretty corny, and I don't plan to change for the next half of my life. You’re welcome.<br /><br />
-
-            If I had any<a class="pill" href="./gallery.html" style="background-color: #1C99CE;">works.</a>
+        <td class="intro-text">
+          <p>
+            I've never seen much point describing someone by a single title. What good does it do to tell me that, say, <a class="ext" href="https://en.wikipedia.org/wiki/Jim_Thorpe" target="_blank" rel="noopener">Jim Thorpe</a> was an American athlete? I would find it more interesting if one told me he was also a background actor, construction worker, a doorman, a security guard, a ditchdigger; briefly sailed for the <a class="ext" href="https://en.wikipedia.org/wiki/United_States_Merchant_Marine" target="_blank" rel="noopener">United States Merchant Marine</a>; had Native American heritage and experience racism for that reason. <a class="ext" href="https://en.wikipedia.org/wiki/Jim_Thorpe#Later_life,_film_career,_and_death" target="_blank" rel="noopener">(Yes, all this is true!)</a>
           </p>
-          <p>also, <a class="pill" href="./music.html" style="background-color: #7A4FBF;">music</a></p>
+          <p>
+            Indeed, I think everyone should be described beyond a couple of sentences. This reason is why I struggle to call myself just a <i>musician</i>, or an <i>IBDP student</i>. It would be a shame to try so many new things and <a class="pill" href="./experience.html" style="background-color: #2DB23A;">experiences</a> and not let it change who I am in any way. People aren't meant to be introduced like that.
+          </p>
+          <p>
+            If I could, I would rather call myself a 16 year old human being who studies the IBDP, performs and writes <a class="pill" href="./music.html" style="background-color: #7A4FBF;">music</a> as a side hustle, who also practices first aid and scouting, and also teaches coding to primary school students, and also wrote a children's book and dressed up as Father Christmas that one time.
+          </p>
+          <p>
+            This website is me doing that, in internet form. Please enjoy this amalgamation of <a class="pill" href="./gallery.html" style="background-color: #1C99CE;">projects</a> old and new that I think are cool enough to share with the world wide web.
+          </p>
         </td>
       </tr>
     </table>
@@ -87,11 +91,26 @@ import UnderConstruction from '../components/UnderConstruction.astro';
     display: block;
   }
 
+  .intro-text {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* Links to other websites: plain underlined text. */
+  .ext {
+    color: white;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .ext:hover {
+    opacity: 0.8;
+  }
+
   /* The coloured inline links to the other pages. They used to be <button>s
      with onclick handlers; real links look the same and work without JavaScript. */
   .pill {
-    padding: 1px;
-    margin: 3px;
+    padding: 1px 4px;
+    margin: 0;
     font-size: 15px;
     font-weight: 600;
     color: white;
